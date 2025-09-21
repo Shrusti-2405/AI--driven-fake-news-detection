@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Factify - About{% endblock %}
+
+{% block content %}
+<style>
+    .about-section {
+        background-color: var(--surface-color);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+    }
+    .about-section h2 {
+        margin-top: 0;
+    }
+    .about-section p {
+        line-height: 1.6;
+    }
+</style>
+<div class="about-section">
+    <h2>About Factify</h2>
+    <p>
+        This project, Factify, is a powerful demonstration of modern AI capabilities applied to the critical task of fake news detection and fact-checking. It was developed by K. Anantha Krishna Rao as part of an ongoing journey in AIML learning.
+    </p>
+    <p>
+        The system leverages a locally-run Large Language Model (<strong>google/flan-t5-base</strong>) to analyze claims. When a user submits a statement, the application performs real-time Google searches using the SerpApi to gather current evidence from the web. This evidence is then passed to the AI model, which provides a reasoned analysis of the claim's validity.
+    </p>
+    <p>
+        This entire application, from the Python backend with Flask to the interactive front-end, showcases a complete end-to-end AI product development cycle.
+    </p>
+</div>
+{% endblock %}

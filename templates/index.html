@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Factify - Home{% endblock %}
+
+{% block content %}
+<style>
+    .hero {
+        text-align: center;
+        padding: 4rem 1rem;
+        background-color: var(--surface-color);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+    }
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .hero p {
+        font-size: 1.25rem;
+        color: var(--secondary-color);
+        margin-bottom: 2rem;
+    }
+    .hero .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff;
+        background-color: var(--primary-color);
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        transition: background-color 0.2s;
+    }
+    .hero .cta-button:hover {
+        background-color: #0056b3;
+    }
+</style>
+<div class="hero">
+    <h1>Welcome to Factify</h1>
+    <p>Your AI-powered tool for separating fact from fiction in a world of information overload.</p>
+    <a href="/fact-checker" class="cta-button">Start Fact-Checking</a>
+</div>
+{% endblock %}

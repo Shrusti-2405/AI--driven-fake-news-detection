@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Factify{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --surface-color: #ffffff;
+            --text-color: #212529;
+            --border-color: #dee2e6;
+            --border-radius: 0.5rem;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: var(--surface-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: background-color 0.2s;
+        }
+        .navbar a.logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .navbar a:not(.logo):hover {
+            background-color: #e9ecef;
+        }
+        .navbar a.active {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            background-color: var(--surface-color);
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">Factify 🧠</a>
+        <div>
+            <a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a>
+            <a href="/fact-checker" class="{{ 'active' if request.path == '/fact-checker' else '' }}">Fact-Checker</a>
+            <a href="/about" class="{{ 'active' if request.path == '/about' else '' }}">About</a>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Factify. Built by K Anantha Krishna Rao, AIML Learner.</p>
+    </footer>
+</body>
+</html>

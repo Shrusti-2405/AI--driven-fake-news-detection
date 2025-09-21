@@ -3,3 +3,6 @@ scikit-learn
 joblib
 transformers
 torch
+sentencepiece
+google-search-results
+flask
