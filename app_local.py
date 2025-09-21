@@ -15,7 +15,7 @@ if not SERPAPI_API_KEY:
 # --- Load Final Local LLM ---
 print("Loading local language model... This is a one-time process when the server starts.")
 try:
-    fact_checker_pipeline = pipeline("text2text-generation", model="t5-small")
+    fact_checker_pipeline = pipeline("text2text-generation", model="google/flan-t5-base")
     print("Model loaded successfully. The server is ready.")
 except Exception as e:
     print(f"Failed to load model. Error: {e}")
@@ -40,12 +40,12 @@ def fact_check_claim_local(claim, evidence):
         return "Model not loaded. Cannot perform fact-checking."
     
     prompt = f"""
+    Question: Based on the context provided, is the following claim true, false, or misleading?
+    Claim: "{claim}"
     Context:
     ---
     {evidence}
     ---
-    Question: Based on the context provided, is the following claim true, false, or misleading? Explain why.
-    Claim: "{claim}"
     Answer:
     """
     
