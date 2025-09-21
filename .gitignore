@@ -1,0 +1,13 @@
+# Python virtual environment
+/Fake-news-detector/
+/env/
+
+# Datasets
+WELFake_Dataset.csv
+
+# Python cache
+__pycache__/
+
+# Other common ignores...
+.vscode/
+.idea/
