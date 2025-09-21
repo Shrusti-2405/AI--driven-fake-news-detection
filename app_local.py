@@ -15,7 +15,7 @@ if not SERPAPI_API_KEY:
 # --- Load Final Local LLM ---
 print("Loading local language model... This is a one-time process when the server starts.")
 try:
-    fact_checker_pipeline = pipeline("text2text-generation", model="google/flan-t5-base")
+    fact_checker_pipeline = pipeline("text2text-generation", model="t5-small")
     print("Model loaded successfully. The server is ready.")
 except Exception as e:
     print(f"Failed to load model. Error: {e}")
