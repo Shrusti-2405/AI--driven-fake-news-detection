@@ -6,3 +6,4 @@ torch
 sentencepiece
 google-search-results
 flask
+gunicorn
